@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mysteel 农产品市场周报（2026.10.8-10.15）</title>
+<style>
+  :root {
+    --red: #BC0008; --dark-red: #8F0006; --blue: #023985;
+    --green: #1B7A3D; --gray: #666666;
+    --bg: #f4f5f7; --card: #ffffff; --border: #e5e7eb;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    background: var(--bg); color: #1f2329; line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .hero {
+    background: linear-gradient(135deg, #8F0006 0%, #BC0008 60%, #d44b2f 100%);
+    color: #fff; padding: 48px 32px 40px; text-align: center;
+  }
+  .hero h1 { font-size: 30px; font-weight: 700; letter-spacing: 1px; }
+  .hero .sub { font-size: 16px; opacity: .92; margin-top: 8px; }
+  .hero .meta-line { font-size: 13px; opacity: .82; margin-top: 12px; }
+  .container { max-width: 1000px; margin: 0 auto; padding: 24px 20px 60px; }
+  .toc {
+    display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+    margin: -28px auto 28px; max-width: 1000px; padding: 0 20px;
+  }
+  .toc a {
+    background: #fff; color: var(--blue); text-decoration: none; font-size: 13px;
+    padding: 8px 16px; border-radius: 20px; border: 1px solid var(--border);
+    box-shadow: 0 1px 4px rgba(0,0,0,.06); transition: .2s;
+  }
+  .toc a:hover { background: var(--red); color: #fff; border-color: var(--red); }
+  .card {
+    background: var(--card); border-radius: 12px; padding: 28px 28px;
+    margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,.05), 0 6px 24px rgba(0,0,0,.04);
+  }
+  h2.section {
+    font-size: 21px; color: var(--red); font-weight: 700; margin-bottom: 18px;
+    padding-left: 12px; border-left: 4px solid var(--red); line-height: 1.4;
+  }
+  h2.section .en { color: #aaa; font-size: 13px; font-weight: 400; margin-left: 8px; }
+  .meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .meta-item { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+  .meta-item:nth-child(odd) { border-right: 1px solid var(--border); }
+  .meta-k { display: block; font-size: 12px; color: var(--blue); font-weight: 600; margin-bottom: 3px; }
+  .meta-v { font-size: 14px; }
+  .summary-lead { font-size: 15px; margin-bottom: 14px; }
+  .strategy {
+    background: #fdf2f0; border: 1px solid #f5c6c1; border-radius: 8px;
+    padding: 14px 16px; font-size: 15px; margin-bottom: 18px;
+  }
+  .strategy b { color: var(--red); }
+  .subsection-title { font-size: 16px; color: var(--blue); font-weight: 700; margin: 20px 0 10px; }
+  .tbl-wrap { overflow-x: auto; margin-top: 6px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  thead th {
+    background: var(--red); color: #fff; font-weight: 600; text-align: left;
+    padding: 10px 12px; white-space: nowrap; font-size: 13.5px;
+  }
+  tbody td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tbody tr:nth-child(even) { background: #fafafa; }
+  td.strong { font-weight: 600; color: #1f2329; }
+  td.blue { color: var(--blue); }
+  td.pct.up { color: var(--red); font-weight: 700; }
+  td.pct.down { color: var(--green); font-weight: 700; }
+  .chip {
+    display: inline-block; font-size: 12px; padding: 2px 10px; border-radius: 12px;
+    margin: 2px 2px; font-weight: 600; line-height: 1.6;
+  }
+  .chip.up { background: #fdecec; color: var(--red); }
+  .chip.down { background: #eaf6ee; color: var(--green); }
+  .main-card {
+    display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--border);
+  }
+  .main-card:last-child { border-bottom: none; }
+  .main-num {
+    flex: 0 0 40px; height: 40px; border-radius: 10px; background: var(--blue);
+    color: #fff; font-weight: 700; display: flex; align-items: center; justify-content: center;
+  }
+  .main-body h4 { font-size: 15px; color: var(--blue); margin-bottom: 4px; }
+  .main-body p { font-size: 14px; color: #444; }
+  .block { margin-bottom: 22px; }
+  .block h3 {
+    font-size: 16px; color: #fff; background: var(--blue); font-weight: 700;
+    padding: 10px 16px; border-radius: 8px 8px 0 0;
+  }
+  .block .item { padding: 12px 16px; border: 1px solid var(--border); border-top: none; background: #fff; }
+  .block .item:last-child { border-radius: 0 0 8px 8px; }
+  .block .item .lead { font-weight: 700; color: #1f2329; }
+  .block .item p { font-size: 14px; }
+  .note {
+    background: #fff7e6; border: 1px solid #f5d9a8; border-radius: 8px;
+    padding: 14px 16px; font-size: 14px; margin-top: 18px;
+  }
+  .note b { color: var(--red); }
+  .risk {
+    display: flex; gap: 8px; padding: 10px 0; font-size: 14px;
+    border-bottom: 1px dashed var(--border); align-items: baseline;
+  }
+  .risk:last-child { border-bottom: none; }
+  .risk-dot { flex: 0 0 8px; height: 8px; border-radius: 50%; background: var(--red); margin-top: 8px; }
+  .risk-t { font-weight: 700; white-space: nowrap; }
+  .footer {
+    text-align: center; color: #999; font-size: 12px; padding: 20px;
+  }
+  @media (max-width: 720px) {
+    .meta-grid { grid-template-columns: 1fr; }
+    .meta-item:nth-child(odd) { border-right: none; }
+    .hero h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+  <div class="hero">
+    <h1>Mysteel 农产品市场周报</h1>
+    <div class="sub">（2026.10.8 — 10.15）· 汇总分析</div>
+    <div class="meta-line">上海钢联（Mysteel）农产品事业部 ｜ 编制日期：2026 年 10 月 16 日</div>
+  </div>
+  <div class="toc"><a href="#summary">摘要与板块速览</a><a href="#overview">市场总览</a><a href="#price">重点品种价格速查</a><a href="#mains">跨板块共性主线</a><a href="#blocks">分板块行情分析</a><a href="#db">数据库指标说明</a><a href="#risk">风险提示</a></div>
+  <div class="container">
+
+    <div class="card" id="summary">
+      <h2 class="section">报告摘要</h2>
+      <div class="meta-grid"><div class="meta-item"><span class="meta-k">报告名称</span><span class="meta-v">农产品市场周报 · 汇总分析</span></div><div class="meta-item"><span class="meta-k">报告周期</span><span class="meta-v">2026 年 10 月 8 日 — 10 月 15 日</span></div><div class="meta-item"><span class="meta-k">发布日期</span><span class="meta-v">2026 年 10 月 16 日</span></div><div class="meta-item"><span class="meta-k">编制单位</span><span class="meta-v">上海钢联（Mysteel）农产品事业部</span></div><div class="meta-item"><span class="meta-k">覆盖范围</span><span class="meta-v">36 份品种周度报告：谷物饲料粮（6）、油脂油料与软商品（6）、淀粉及深加工（7）、生鲜养殖（7）、果蔬调味（7）、添加剂与动物蛋白（3）</span></div><div class="meta-item"><span class="meta-k">数据来源</span><span class="meta-v">Mysteel 农产品数据库（钢联数据终端 · 农产品板块）</span></div></div>
+      <div class="subsection-title">核心观点</div>
+      <p class="summary-lead">本周农产品市场整体呈“<b>新粮上市压顶、需求节后转淡、成本与惜售托底</b>”的弱平衡格局。东北玉米、新稻、新棉、花生、大蒜等新季货源集中上市，供应端季节性放量；节后消费惯性回落，饲料养殖端深度亏损压制补库意愿。多数品种偏弱震荡，仅小麦（托市+惜售）、肉牛（牛源偏紧）、鱼粉（秘鲁停捕）、蛋氨酸（进口减量）、稻米（托市启动）逆势偏强。</p>
+      <div class="strategy"><b>策略主线：</b>谷物链逢反弹沽压、不追空；养殖链等待产能出清信号；油脂关注棕榈油累库与菜油现货偏紧的结构性机会。</div>
+      <div class="subsection-title">板块速览</div>
+      <div class="tbl-wrap"><table class="board"><thead><tr><th style="width:16%">板块</th><th style="width:36%">本周统一观点</th><th>内部分化（偏强 / 承压）</th></tr></thead><tbody><tr><td class="strong blue">谷物饲料粮（6）</td><td>新粮集中上市 vs 政策托市/惜售托底，整体偏弱震荡、区域分化，大跌空间有限</td><td><span class="chip up">偏强：小麦（+0.25%）、稻米（托市企稳）；大豆高位僵持</span><span class="chip down">承压：玉米（-1.83%）、豆粕（-1.49%）、高粱大麦</span></td></tr><tr><td class="strong blue">油脂油料与软商品（6）</td><td>外强内弱、油脂分化；白糖丰产高库存压制；花生新季上市持弱；棉花弱区间震荡</td><td><span class="chip up">偏强：菜油（+1.06%）、棕榈油（看涨心态 50%）</span><span class="chip down">承压：豆油（148 万吨）、菜粕、白糖（-1.24%）、花生（-2.23%）、棉花</span></td></tr><tr><td class="strong blue">淀粉及深加工（7）</td><td>原料玉米下跌 + 需求淡季，全链利润收缩、价格普遍持弱</td><td><span class="chip down">承压：淀粉糖、DDGS、玉米副产品、小麦淀粉；僵持：木薯淀粉、马铃薯淀粉</span></td></tr><tr><td class="strong blue">生鲜养殖（7）</td><td>节后需求回落 + 供给充裕，猪/蛋/鸭全线走弱、深度亏损；仅肉牛独强</td><td><span class="chip up">偏强：肉牛（+0.28%，育肥盈利 4133 元/头）</span><span class="chip down">承压：生猪（-2.05%，自繁自养 -216 元/头）、鸡蛋（-5.00%）、白羽肉鸭、817/青脚麻鸡</span></td></tr><tr><td class="strong blue">果蔬调味（7）</td><td>供给充裕 vs 刚需小单，结构性分化、精品强普通弱；味精/柠檬酸靠亏损挺价</td><td><span class="chip up">偏强：生姜精品（+6.25%）、辣椒精品</span><span class="chip down">承压：大蒜（-7.35%）、马铃薯（-1.56%）、红枣（旧季高库存）</span></td></tr><tr><td class="strong blue">添加剂与动物蛋白（3）</td><td>供给端事件驱动的结构性行情：秘鲁停捕、蛋氨酸进口减量领涨</td><td><span class="chip up">偏强：鱼粉（秘鲁超级 +5.65%）、蛋氨酸（+5.93%）；缬氨酸高位回落、鸡肉粉/肉骨粉走弱</span></td></tr></tbody></table></div>
+    </div>
+
+    <div class="card" id="overview">
+      <h2 class="section">一、市场总览</h2>
+      <p>本周农产品市场的主导矛盾来自三个方面：<b>供应端</b>新季货源集中放量（东北玉米/新豆/新棉/花生/新蒜/新薯），<b>需求端</b>“金九银十”旺季不旺、节后惯性回落，<b>成本端</b>深加工与养殖行业深度亏损形成被动挺价。三者叠加，多数品种呈“下有成本/政策托底、上有供应压制”的窄幅震荡，仅少数供给端受突发事件扰动的品种（鱼粉、蛋氨酸、菜油、肉牛、小麦、稻米）走出独立偏强行情。</p>
+    </div>
+
+    <div class="card" id="price">
+      <h2 class="section">二、重点品种价格速查</h2>
+      <div class="tbl-wrap"><table class="price"><thead><tr><th>品种</th><th>本周价格</th><th>周环比</th><th>品种</th><th>本周价格</th><th>周环比</th></tr></thead><tbody><tr><td class="strong">玉米（全国均价）</td><td>2194 元/吨</td><td class="pct down">-1.83%</td><td class="strong">小麦（全国均价）</td><td>2443 元/吨</td><td class="pct up">+0.25%</td></tr><tr><td class="strong">豆粕（全国均价）</td><td>3352 元/吨</td><td class="pct down">-49 元</td><td class="strong">CBOT 大豆</td><td>1277.5 美分/蒲</td><td class="pct down">-1.41%</td></tr><tr><td class="strong">豆油（主力）</td><td>8854 元/吨</td><td class="pct down">-0.58%</td><td class="strong">菜油（主力）</td><td>10359 元/吨</td><td class="pct up">+1.06%</td></tr><tr><td class="strong">棕榈油（主力）</td><td>9446 元/吨</td><td class="pct down">-0.66%</td><td class="strong">菜粕（全国均价）</td><td>2490 元/吨</td><td class="pct down">-0.6%</td></tr><tr><td class="strong">郑糖 2701</td><td>5418 元/吨</td><td class="pct down">-1.24%</td><td class="strong">花生（通货米）</td><td>7973 元/吨</td><td class="pct down">-2.23%</td></tr><tr><td class="strong">3128B 皮棉</td><td>17524 元/吨</td><td class="pct up">+0.66%</td><td class="strong">郑棉主力</td><td>15835 元/吨</td><td class="pct down">-0.79%</td></tr><tr><td class="strong">玉米淀粉（全国）</td><td>2632 元/吨</td><td class="pct down">-5 元</td><td class="strong">DDGS（高脂全国）</td><td>2211 元/吨</td><td class="pct down">-18 元</td></tr><tr><td class="strong">生猪（出栏均价）</td><td>10.01 元/公斤</td><td class="pct down">-2.05%</td><td class="strong">白条（前三级）</td><td>13.65 元/公斤</td><td class="pct down">-1.52%</td></tr><tr><td class="strong">鸡蛋（主产区）</td><td>3.99 元/斤</td><td class="pct down">-5.00%</td><td class="strong">白羽肉鸡（棚前）</td><td>3.10 元/斤</td><td class="pct up">+5.44%</td></tr><tr><td class="strong">白羽肉鸭（北方毛鸭）</td><td>3.27 元/斤</td><td class="pct down">-3.05%</td><td class="strong">817 小白鸡</td><td>3.42 元/斤</td><td class="pct down">-0.58%</td></tr><tr><td class="strong">肉牛（育肥公牛）</td><td>30.07 元/公斤</td><td class="pct up">+0.28%</td><td class="strong">大蒜（全国均价）</td><td>1.89 元/斤</td><td class="pct down">-7.35%</td></tr><tr><td class="strong">生姜（昌邑水洗）</td><td>1.70 元/斤</td><td class="pct up">+6.25%</td><td class="strong">马铃薯（全国均价）</td><td>0.63 元/斤</td><td class="pct down">-1.56%</td></tr><tr><td class="strong">红枣（灰枣特级）</td><td>7.50 元/公斤</td><td class="pct down">-0.26 元</td><td class="strong">味精（大包装）</td><td>约 6783 元/吨</td><td class="pct up">稳中偏强</td></tr><tr><td class="strong">蛋氨酸</td><td>25.0 元/公斤</td><td class="pct up">+5.93%</td><td class="strong">秘鲁超级鱼粉</td><td>24300 元/吨</td><td class="pct up">+5.65%</td></tr></tbody></table></div>
+      <p style="font-size:12px;color:#999;margin-top:8px;">注：环比为本周（10.8-10.15）较上周变化，涨/偏强标红、跌/偏弱标绿。</p>
+    </div>
+
+    <div class="card" id="mains">
+      <h2 class="section">三、跨板块共性主线</h2>
+      <div class="main-card"><div class="main-num">1</div><div class="main-body"><h4>主线 1：新季集中上市</h4><p>谷物/油脂油料/果蔬全面进入供应高峰期，是本周最大共同压力。东北新玉米集中上市，山东深加工早间剩余车日均 967 辆（上周 620），吉林周跌 106 元/吨领跌，北方四港库存 187.1 万吨（+19.7 万吨）。东北新豆收割收尾、减产超预期但高价承接不足；新季花生集中上市，油厂到货 16150 吨（+4000）；新疆籽棉集中收购、皮棉公检同比 +51.56%。</p></div></div><div class="main-card"><div class="main-num">2</div><div class="main-body"><h4>主线 2：节后需求惯性回落</h4><p>“金九银十”旺季不旺，刚需小单、无集中备货是全品类通病。生猪节后消费红利消退，屠企开工 30.22% 低位；鸡蛋销区销量 -2.86%；淀粉糖饮料淡季、啤酒拿货减少；面粉走货平淡、粉企开机仅 32.2%；米厂开机 18.3% 低位控产去库。</p></div></div><div class="main-card"><div class="main-num">3</div><div class="main-body"><h4>主线 3：养殖深度亏损传导饲料链</h4><p>猪价破位压制豆粕/DDGS/副产品/氨基酸需求预期。生猪出栏均价 10.01 元/公斤（同比 -8.58%），自繁自养 -216.21 元/头、外购 -117.93 元/头。饲料企业谨慎，豆粕物理库存仅 8.23 天；DDGS 调研 0 家看涨、16 家看跌。仅蛋鸡盈利 30.43 元/只与肉牛育肥 +4133 元/头为正。</p></div></div><div class="main-card"><div class="main-num">4</div><div class="main-body"><h4>主线 4：政策托市与储备调节封住下行空间</h4><p>小麦/稻米/玉米底部支撑明确。湖北、湖南 10 月 14 日启动中晚稻最低收购价预案（国标三等 1.29 元/斤）；小麦 1-4 月托市成交 616.09 万吨（率 78.77%）；玉米中储粮采购成交率 62.22%，东北地方储备轮换入市 + 农户惜售抬头托底。</p></div></div><div class="main-card"><div class="main-num">5</div><div class="main-body"><h4>主线 5：供给端突发扰动制造逆势亮点</h4><p>秘鲁停捕、蛋氨酸进口减量、菜籽库存低位。秘鲁沿岸鳀鱼幼鱼占比 79%、26B 季停捕，26A 季配额完成仅 24.61%，国内鱼粉港口库存 12.10 万吨（-5.10%，年内低位）；蛋氨酸海外装置检修致进口减量、厂家停报挺价；沿海菜籽库存 29.38 万吨（-10.7%）、菜油库存同比 -34.55%。</p></div></div><div class="main-card"><div class="main-num">6</div><div class="main-body"><h4>主线 6：成本与亏损挺价</h4><p>深加工/发酵行业“以亏保价”，价格跌幅受限但上行动力缺失。味精未对冲利润 -3312 元/吨、柠檬酸对冲后利润仅 36.96 元/吨；玉米淀粉山东利润 -19 元/吨仍小幅提价；玉米油理论利润 -63 元/吨；棉纺内地利润 -1165 元/吨制约棉花采购。</p></div></div>
+    </div>
+
+    <div class="card" id="blocks">
+      <h2 class="section">四、分板块行情分析（36 品种）</h2>
+      <div class="block"><h3>4.1 谷物饲料粮（玉米 / 小麦 / 稻米 / 高粱大麦 / 大豆 / 豆粕）</h3><div class="item"><p><span class="lead">① 玉米：新粮集中上市压价，偏弱震荡、大跌空间有限。</span>全国均价 2194 元/吨（-41，-1.83%）；连盘 2701 结算 2178（+27）；CBOT 玉米 480.75 美分（-3.9%）。东北新粮集中上市、吉林 2089（-106）领跌，深加工库存 256.9 万吨（+5.46%），北方四港库存 187.1 万吨（+19.7）。需求端 149 家深加工消费 135.07 万吨（-1.66），饲料企业库存 24.95 天。政策面中储粮采购成交率 62.22%。展望：区域分化，供应季节性高位 vs 农户惜售 + 东北地方储备轮换托底。</p></div><div class="item"><p><span class="lead">② 小麦：托市 + 惜售 + 流通偏紧，四季度易涨难跌。</span>全国均价 2443 元/吨（+0.25%）；玉米小麦价差扩至 250 元/吨、替代停滞。1-4 月托市成交 616.09 万吨（率 78.77%）；粉企开机 32.2%、加工利润 -52 元/吨。建议“逢高获利了结，勿盲目抬价抢收”。</p></div><div class="item"><p><span class="lead">③ 稻米：托市启动封住下行空间，企稳偏强。</span>籼稻荆门 1.16 元/斤（+3.57%）、粳稻五常 2.90 元/斤（+2.47%）；米厂开机约 18.3% 低位。湖北、湖南 10 月 14 日启动中晚稻最低收购价预案（国标三等 1.29 元/斤）。</p></div><div class="item"><p><span class="lead">④ 高粱、大麦：国产承压、进口平稳，窄幅震荡偏弱。</span>国产粳高粱 1.37-1.42 元/斤（-1%~-2%）；南通港加麦 2300 元/吨（-30）；广东港高粱库存 145.6 万吨（+4.3）、大麦 87.8 万吨（-9）。</p></div><div class="item"><p><span class="lead">⑤ 大豆：减产 + 惜售 vs 高价承接不足，高位僵持。</span>东北毛粮 2.50-2.60 元/斤；豆一 01 收 5409；CBOT 1277.5 美分（-1.41%）。东北收割收尾、减产超预期，贸易商库存约七成偏低；USDA 美豆单产 53.1 蒲/英亩新高（偏空）。</p></div><div class="item"><p><span class="lead">⑥ 豆粕：高库存 + 供大于求，进口成本托底下行有限。</span>全国均价 3352 元/吨（-49）；M2701 收 3316（-1.49%）；油厂大豆库存 862.18 万吨（近三年最高）；豆粕库存 109.08 万吨（-16.16%）。M01 支撑 3280-3300 元/吨，建议逢支撑分批补库。</p></div></div><div class="block"><h3>4.2 油脂油料与软商品（油脂 / 菜系 / 白糖 / 花生 / 葵玉油 / 棉业）</h3><div class="item"><p><span class="lead">⑦ 全国油脂：外强内弱，菜油独强、豆油承压、棕榈油弱势有限。</span>豆油商业库存 148.73 万吨高位；棕榈油商业库存 116.07 万吨（+19.90%，同比 +111.96%）、马棕 9 月库存 351 万吨（+24.54%），但看涨心态 50% 最强；菜油沿海菜籽库存 29.38 万吨（-10.7%）、库存同比 -34.55%，现货逆势 +130 元/吨。</p></div><div class="item"><p><span class="lead">⑧ 菜系（菜粕）：供应宽松难扭转，价格中枢下行。</span>全国均价 2490 元/吨（-15）；菜籽压榨 9.5 万吨（-4），进口菜籽库存 29.38 万吨（-11%）；提货 4.9 万吨（-1.92%）。心态多/空/震荡 30/30/40。</p></div><div class="item"><p><span class="lead">⑨ 白糖：新榨季丰产 + 高库存，震荡偏弱。</span>郑糖 2701 结算 5418（-1.24%）；25/26 榨季累计产糖 1295 万吨（+16.01%）、工业库存 129.26 万吨（+64.57%）、销糖率 90%（-4.2pct）。郑糖 5350-5480 偏弱震荡。</p></div><div class="item"><p><span class="lead">⑩ 花生：新季集中上市 + 需求欠佳，均价持弱。</span>通货米均价 7973 元/吨（-2.23%）；油厂到货 16150 吨（+4000）；油厂看跌 39%。</p></div><div class="item"><p><span class="lead">⑪ 葵花籽油、玉米油：成本支撑，稳中小幅震荡。</span>一级葵油 11400 元/吨（持平）、港口库存 8.62 万吨低位；一级玉米油 9500（持平）、理论利润 -63 元/吨（油厂挺价）。</p></div><div class="item"><p><span class="lead">⑫ 棉业：新疆集中上市压制，郑棉 15500-16500 弱区间震荡。</span>3128B 皮棉 17524 元/吨（+0.66%）、郑棉主力 15835（-0.79%）；轧花厂开工 80.24%、皮棉公检 63.51 万吨（+51.56%）、商业库存 196 万吨（+17.80%）；内地纺纱利润 -1165 元/吨。</p></div></div><div class="block"><h3>4.3 淀粉及深加工（玉米淀粉 / 小麦淀粉 / 马铃薯淀粉 / 木薯淀粉 / 淀粉糖 / 玉米副产品 / DDGS）</h3><div class="item"><p><span class="lead">⑬ 玉米淀粉：区域分化，华北小涨、东北承压。</span>全国均价 2632 元/吨（-5）；山东 2680（+20）、黑龙江 2480（-20）；开机 58.79%、库存 136.8 万吨。华北民用替代增量、东北受新玉米投料压制。</p></div><div class="item"><p><span class="lead">⑭ 小麦淀粉：弱势平衡，稳中偏弱。</span>河南 2750、山东 2780（持平）；开机 52.44%、全国利润 -7 元/吨；部分民用市场被玉米淀粉替代。</p></div><div class="item"><p><span class="lead">⑮ 马铃薯淀粉：新粉集中放量 vs 需求疲软，弱稳整理。</span>甘肃优级粉 5600 元/吨（持平）；开机率 75%（+5pct）；全国平均利润约 150 元/吨。</p></div><div class="item"><p><span class="lead">⑯ 木薯淀粉：高成本支撑 vs 弱需求，高位僵持。</span>泰国粉 5137 元/吨（持平）、越南粉 4618（-3）；港口库存 9.21 万吨低位；进口商利润 -94.18 元/吨。</p></div><div class="item"><p><span class="lead">⑰ 淀粉糖：全线偏弱，利润普遍下滑。</span>结晶葡萄糖 3188（-15）、麦芽糖浆 2541（-18）、F55 果葡 2667（-13）、麦芽糊精 3545（-23）；饮料淡季、啤酒拿货减少。</p></div><div class="item"><p><span class="lead">⑱ 玉米副产品：供强需弱，仍存回落风险。</span>蛋白粉 4538（-0.81%）、喷浆纤维 984（-2.86%）、胚芽粕 1407（-4.42%）；新季玉米投料、开机高位，副产品供应稳步增加。</p></div><div class="item"><p><span class="lead">⑲ DDGS：玉米下跌 + 豆粕走弱 + 水产退市，偏弱运行。</span>全国高脂 2211 元/吨（-18）；开机率 62.10%（-2.83pct）；调研 0 看涨/16 看跌/19 震荡，预计降幅 30-50 元/吨。</p></div></div><div class="block"><h3>4.4 生鲜养殖（生猪 / 猪肉 / 禽 / 蛋 / 肉牛）</h3><div class="item"><p><span class="lead">⑳ 生猪：供大于求持续，下周 9.7-10.0 元/公斤偏弱。</span>出栏均价 10.01 元/公斤（-2.05%）；自繁自养 -216.21 元/头；9 月能繁母猪 463.39 万头（环比 -0.80%）、商品猪存栏 3680.70 万头、出栏同比 +18.32%；屠宰开工 30.22%、冻品库容 31.87%（同比 +14.23%）。</p></div><div class="item"><p><span class="lead">㉑ 猪肉：猪源充足需求一般，低位震荡。</span>白条 13.65 元/公斤（-1.52%）；屠宰利润 -7.80 元/头；自营店销量同比 -10.53%。</p></div><div class="item"><p><span class="lead">㉒ 白羽肉鸡：超跌反弹，持续性存疑。</span>棚前 3.10 元/斤（+5.44%）；鸡苗 2.04 元/羽（+19.30%）；分割品 8411 元/吨（-0.49%）；养殖仍亏 -1.99 元/只。</p></div><div class="item"><p><span class="lead">㉓ 白羽肉鸭：全线回落，心态偏空。</span>北方毛鸭 3.27 元/斤（-3.05%）；鸭苗 1.95 元/羽（-6.19%）；屠宰利润 -560.51 元/吨；看跌 28/50 家。</p></div><div class="item"><p><span class="lead">㉔ 817 小白鸡、青脚麻鸡：节后回落，窄幅调整。</span>817 均价 3.42 元/斤（-0.58%）、青脚麻鸡 4.85 元/斤（-6.32%）；养殖均亏损。</p></div><div class="item"><p><span class="lead">㉕ 鸡蛋：节后淡季，看跌主导，下周 3.70-3.80 元/斤。</span>主产区均价 3.99 元/斤（-5.00%）；在产蛋鸡存栏 12.53 亿只（-1.62%）；流通库存 1.77 天（+12.03%）；看跌 50%。</p></div><div class="item"><p><span class="lead">㉖ 肉牛：唯一趋势性偏强品种，下周稳中偏强。</span>育肥公牛 30.07 元/公斤（+0.28%）；犊牛 42.44 元/公斤；育肥盈利 4132.61 元/头（+169.78%）；9 月样本存栏同比 -7.27%、活牛供给偏紧。</p></div></div><div class="block"><h3>4.5 果蔬调味（大蒜 / 生姜 / 辣椒 / 马铃薯 / 红枣 / 味精 / 柠檬酸）</h3><div class="item"><p><span class="lead">㉗ 大蒜：库存压顶，环比领跌，精品坚挺。</span>全国均价 1.89 元/斤（-7.35%，同比 -32.78%）；六大主产区剩余库存 517.8 万吨；平均库存利润 -0.35 元/斤、多数持仓亏损；看跌 45%。</p></div><div class="item"><p><span class="lead">㉘ 生姜：节后先涨后稳，品质分化加剧。</span>昌邑水洗姜 1.70 元/斤（+6.25%）、乳山面姜 1.25（+13.64%）；两大洗姜市场上货 3420 车（同比 +24.37%）；看跌 40%。</p></div><div class="item"><p><span class="lead">㉙ 辣椒：优质坚挺、普通承压，分化震荡。</span>金乡三樱椒上通货 12.00 元/斤（持平）；2025 年主产区库存近 28 万吨（+36.59%，历史高位）；新椒花皮占比偏高。</p></div><div class="item"><p><span class="lead">㉚ 马铃薯：供应无缺口 + 消费不强，弱稳窄调。</span>全国均价 0.63 元/斤（-1.56%）；贸易商看跌 80%；山东冷库利润仅 0.01 元/斤。</p></div><div class="item"><p><span class="lead">㉞ 红枣：旧季高库存 + 新季下树在即，缺乏上行驱动。</span>灰枣特级 7.50 元/公斤（-0.26）；样本库存 9350 吨（同比 +2.00%）；核心焦点为新季开秤价与收购节奏。</p></div><div class="item"><p><span class="lead">㉟ 味精：亏损挺价，稳中偏强。</span>大包装主流 6300-6800 元/吨；开机率 90% 高位；未对冲利润约 -3312 元/吨。</p></div><div class="item"><p><span class="lead">㊱ 柠檬酸：外贸尚可，价格趋稳。</span>食品级一水主流 6000-6200 元/吨（持平）；开机率 57%；对冲后利润约 36.96 元/吨。</p></div></div><div class="block"><h3>4.6 添加剂与动物蛋白（氨基酸 / 鱼粉）</h3><div class="item"><p><span class="lead">㊲ 氨基酸：蛋氨酸领涨，赖苏持稳，缬氨酸回落。</span>蛋氨酸 25.0 元/公斤（+5.93%）；70% 赖氨酸 4.30、苏氨酸 7.20、色氨酸 28.0（均持平）；蛋氨酸海外装置检修进口减量、厂家停报挺价。</p></div><div class="item"><p><span class="lead">㊳ 鱼粉：秘鲁停捕引爆供应担忧，震荡偏强但“价涨量弱”。</span>秘鲁超级≥68% 24300 元/吨（+5.65%，周涨 1300）；港口总库存 12.10 万吨（-5.10%，年内低位）；秘鲁 26B 季停捕、26A 季配额完成仅 24.61%；下游“有价无市”。</p></div></div>
+    </div>
+
+    <div class="card" id="db">
+      <h2 class="section">五、数据来源与数据库指标说明</h2>
+      <p style="font-size:14px;margin-bottom:8px;">本报告全部数据均摘录自 <b style="color:var(--red)">Mysteel 农产品数据库（钢联数据终端 · 农产品板块）</b>，按价格五要素（品种+规格+市场+企业/工艺+频率）及指标维度框架（期货行情、现货价格、上游成本、供需基本面、库存、利润加工费、下游、进出口）梳理对应指标如下。</p>
+      <div class="subsection-title">5.1 现货价格类指标（价格五要素）</div>
+      <div class="tbl-wrap"><table><thead><tr><th>品种</th><th>指标名称（数据库）</th><th>规格/口径</th><th>频率</th><th>单位</th></tr></thead><tbody><tr><td class="strong">玉米</td><td class="">全国均价 / 东北·华北·山东产区价 / 北方港口平舱价</td><td class="">国标二等（14% 水）</td><td class="">日/周</td><td class="">元/吨</td></tr><tr><td class="strong">小麦</td><td class="">全国均价 / 主产区进厂价</td><td class="">国标三等</td><td class="">日/周</td><td class="">元/吨</td></tr><tr><td class="strong">稻米</td><td class="">籼稻/粳稻产区收购价</td><td class="">国标三等</td><td class="">周度</td><td class="">元/斤</td></tr><tr><td class="strong">大豆</td><td class="">东北毛粮价 / 国产豆现货</td><td class="">净粮</td><td class="">日度</td><td class="">元/斤</td></tr><tr><td class="strong">豆粕</td><td class="">全国均价 / 沿海主流油厂报价</td><td class="">43% 蛋白</td><td class="">日度</td><td class="">元/吨</td></tr><tr><td class="strong">油脂</td><td class="">豆油/菜油/棕榈油主流油厂现货、港口现货</td><td class="">一级/四级</td><td class="">日度</td><td class="">元/吨</td></tr><tr><td class="strong">白糖</td><td class="">广西现货价 / 主产区报价</td><td class="">一级白砂糖</td><td class="">日度</td><td class="">元/吨</td></tr><tr><td class="strong">花生</td><td class="">通货米均价</td><td class="">通货</td><td class="">周度</td><td class="">元/吨</td></tr><tr><td class="strong">棉花</td><td class="">3128B 级皮棉 / 籽棉收购均价</td><td class="">3128B</td><td class="">日/周</td><td class="">元/吨、元/公斤</td></tr><tr><td class="strong">玉米淀粉</td><td class="">全国均价 / 山东·黑龙江出厂价</td><td class="">一级</td><td class="">日度</td><td class="">元/吨</td></tr><tr><td class="strong">DDGS</td><td class="">高脂全国均价</td><td class="">高脂</td><td class="">周度</td><td class="">元/吨</td></tr><tr><td class="strong">生猪</td><td class="">出栏均价 / 白条肉价</td><td class="">标猪</td><td class="">日/周</td><td class="">元/公斤</td></tr><tr><td class="strong">鸡蛋</td><td class="">主产区均价 / 销区均价</td><td class="">褐壳大蛋</td><td class="">日度</td><td class="">元/斤</td></tr><tr><td class="strong">禽类</td><td class="">白羽肉鸡/肉鸭/817 棚前价、毛鸭价</td><td class="">活禽</td><td class="">日/周</td><td class="">元/斤</td></tr><tr><td class="strong">肉牛</td><td class="">育肥公牛价 / 犊牛价</td><td class="">育肥公牛</td><td class="">周度</td><td class="">元/公斤</td></tr><tr><td class="strong">果蔬</td><td class="">大蒜/生姜/马铃薯/红枣 全国均价</td><td class="">混级/精品分级</td><td class="">日/周</td><td class="">元/斤、元/公斤</td></tr><tr><td class="strong">味精/柠檬酸</td><td class="">主流成交价</td><td class="">大包装/食品级一水</td><td class="">周度</td><td class="">元/吨</td></tr><tr><td class="strong">氨基酸</td><td class="">蛋/赖/苏/色/缬氨酸市场报价</td><td class="">市场报价</td><td class="">周度</td><td class="">元/公斤</td></tr><tr><td class="strong">鱼粉</td><td class="">秘鲁超级/港口报价</td><td class="">≥68% 蛋白</td><td class="">周度</td><td class="">元/吨</td></tr></tbody></table></div>
+      <div class="subsection-title">5.2 期货行情类指标</div>
+      <div class="tbl-wrap"><table><thead><tr><th>交易所</th><th>品种（合约代码）</th></tr></thead><tbody><tr><td class="strong">大连商品交易所（DCE）</td><td class="">玉米（连盘）、豆粕（M）、豆油（Y）、棕榈油（P）、豆一（A）、鸡蛋（JD）、玉米淀粉（CS）</td></tr><tr><td class="strong">郑州商品交易所（CZCE）</td><td class="">白糖（SR）、棉花（CF）、菜油（OI）、菜粕（RM）、红枣（CJ）、苹果（AP）</td></tr><tr><td class="strong">芝加哥期货交易所（CBOT）</td><td class="">玉米、大豆、小麦</td></tr><tr><td class="strong">洲际交易所（ICE）</td><td class="">原糖</td></tr></tbody></table></div>
+      <div class="subsection-title">5.3 库存类指标</div><div class="tbl-wrap"><table><thead><tr><th>维度</th><th>指标名称（数据库）</th><th>频率</th></tr></thead><tbody><tr><td class="strong">玉米</td><td class="">北方四港库存、深加工企业库存、饲料企业库存</td><td class="">周度</td></tr><tr><td class="strong">豆粕/大豆</td><td class="">油厂豆粕库存、油厂大豆库存</td><td class="">周度</td></tr><tr><td class="strong">油脂</td><td class="">豆油商业库存、棕榈油商业库存、沿海菜籽库存、菜油库存</td><td class="">周度</td></tr><tr><td class="strong">白糖</td><td class="">工业库存</td><td class="">月度</td></tr><tr><td class="strong">棉花</td><td class="">商业库存、纱线库存、棉花库存（纺企）</td><td class="">周/月</td></tr><tr><td class="strong">淀粉</td><td class="">样本企业淀粉库存</td><td class="">周度</td></tr><tr><td class="strong">鱼粉</td><td class="">港口总库存</td><td class="">周度</td></tr><tr><td class="strong">红枣</td><td class="">样本库存</td><td class="">周度</td></tr><tr><td class="strong">大蒜</td><td class="">六大主产区剩余库存</td><td class="">周度</td></tr><tr><td class="strong">生猪</td><td class="">冻品库容率</td><td class="">周度</td></tr><tr><td class="strong">鸡蛋</td><td class="">流通库存</td><td class="">周度</td></tr><tr><td class="strong">高粱/大麦</td><td class="">广东港库存</td><td class="">周度</td></tr></tbody></table></div><div class="subsection-title">5.4 开工率 / 产能类指标</div><div class="tbl-wrap"><table><thead><tr><th>品种</th><th>指标名称（数据库）</th><th>频率</th></tr></thead><tbody><tr><td class="strong">玉米/淀粉</td><td class="">深加工开机率、淀粉开机率</td><td class="">周度</td></tr><tr><td class="strong">小麦</td><td class="">粉企开机率</td><td class="">周度</td></tr><tr><td class="strong">稻米</td><td class="">米厂开机率</td><td class="">周度</td></tr><tr><td class="strong">油脂</td><td class="">油厂压榨开机率、压榨量</td><td class="">周度</td></tr><tr><td class="strong">棉花</td><td class="">轧花厂开工率、纺企开机率</td><td class="">周度</td></tr><tr><td class="strong">生猪</td><td class="">屠宰开工率、屠宰量</td><td class="">周度</td></tr><tr><td class="strong">禽类</td><td class="">屠宰开工率、出苗量/日均出苗</td><td class="">周度</td></tr><tr><td class="strong">马铃薯淀粉</td><td class="">开机率</td><td class="">周度</td></tr><tr><td class="strong">味精/柠檬酸</td><td class="">开机率</td><td class="">周度</td></tr><tr><td class="strong">玉米副产品/DDGS</td><td class="">酒精开机率、DDGS 开机率</td><td class="">周度</td></tr></tbody></table></div><div class="subsection-title">5.5 利润类指标</div><div class="tbl-wrap"><table><thead><tr><th>品种</th><th>指标名称（数据库）</th><th>频率</th></tr></thead><tbody><tr><td class="strong">生猪</td><td class="">自繁自养利润、外购仔猪利润、屠宰加工利润</td><td class="">周度</td></tr><tr><td class="strong">禽类</td><td class="">白羽肉鸡/817/青脚麻鸡养殖利润、蛋鸡单只盈利、屠宰利润</td><td class="">周度</td></tr><tr><td class="strong">肉牛</td><td class="">育肥盈利</td><td class="">周度</td></tr><tr><td class="strong">玉米淀粉</td><td class="">玉米淀粉加工利润（分地区）</td><td class="">周度</td></tr><tr><td class="strong">酒精/DDGS</td><td class="">酒精利润</td><td class="">周度</td></tr><tr><td class="strong">味精/柠檬酸</td><td class="">未对冲利润 / 对冲后利润</td><td class="">周度</td></tr><tr><td class="strong">小麦</td><td class="">粉企加工利润</td><td class="">周度</td></tr><tr><td class="strong">玉米油</td><td class="">理论利润</td><td class="">周度</td></tr><tr><td class="strong">棉花</td><td class="">纺纱利润（内地/新疆）</td><td class="">周度</td></tr><tr><td class="strong">木薯淀粉</td><td class="">进口商利润</td><td class="">周度</td></tr><tr><td class="strong">马铃薯淀粉</td><td class="">平均加工利润</td><td class="">周度</td></tr></tbody></table></div><div class="subsection-title">5.6 供需 / 进出口类指标</div><div class="tbl-wrap"><table><thead><tr><th>品种</th><th>指标名称（数据库）</th><th>频率</th></tr></thead><tbody><tr><td class="strong">玉米</td><td class="">深加工消费量、进口玉米成交、饲料消费</td><td class="">周度</td></tr><tr><td class="strong">豆粕</td><td class="">压榨量、到港量、成交量、提货量</td><td class="">周度</td></tr><tr><td class="strong">油脂</td><td class="">到港量、进口量</td><td class="">周/月</td></tr><tr><td class="strong">生猪</td><td class="">能繁母猪存栏、商品猪存栏、出栏量、出栏均重</td><td class="">月/周</td></tr><tr><td class="strong">棉花</td><td class="">皮棉公检量、籽棉收购量</td><td class="">周度</td></tr><tr><td class="strong">白糖</td><td class="">产糖量、销糖率、进口量</td><td class="">月度</td></tr><tr><td class="strong">花生</td><td class="">油厂到货量、油企库存</td><td class="">周度</td></tr><tr><td class="strong">葵油/菜籽</td><td class="">进口量、到港</td><td class="">月度</td></tr><tr><td class="strong">鱼粉</td><td class="">配额完成量、进口到港</td><td class="">周度</td></tr></tbody></table></div>
+      <div class="note"><b>口径说明：</b>部分指标存在日报口径与周度期末口径的差异（如鸡蛋主产区均价 4.20 元/斤 vs 3.99 元/斤），本报告统一取周度正文核心口径。数据口径以钢联数据终端实际展示为准。</div>
+    </div>
+
+    <div class="card" id="risk">
+      <h2 class="section">六、风险提示</h2>
+      <div class="risk"><span class="risk-dot"></span><span class="risk-t">新粮上市超预期压力：</span>东北玉米/新豆/新棉/花生上量节奏若快于预期，叠加贸易商资金链压力，谷物油料价格存在二次探底风险。</div><div class="risk"><span class="risk-dot"></span><span class="risk-t">需求持续疲弱：</span>养殖深度亏损（生猪 -216 元/头）若延续，饲料链（豆粕/DDGS/副产品/氨基酸）补库意愿进一步萎缩。</div><div class="risk"><span class="risk-dot"></span><span class="risk-t">政策变量：</span>储备轮换投放节奏、2027 年小麦最低收购价、进口玉米/配额政策可能改变谷物链供需预期；白糖进口政策、棉花配额亦需跟踪。</div><div class="risk"><span class="risk-dot"></span><span class="risk-t">海外供给事件反复：</span>秘鲁 26B 季停捕后续、蛋氨酸海外装置复产节奏、美豆收割与巴西新季丰产兑现、马棕累库速度。</div><div class="risk"><span class="risk-dot"></span><span class="risk-t">天气与品质风险：</span>东北新玉米毒素波动、新粮水分偏高、新季红枣开秤价博弈、新椒花皮占比偏高等，可能造成“优质紧俏、普通滞销”的极端价差。</div><div class="risk"><span class="risk-dot"></span><span class="risk-t">宏观与汇率：</span>CBOT 农产品波动、人民币汇率变化影响进口成本（豆粕/油脂/鱼粉/木薯淀粉等进口依赖品种）。</div>
+    </div>
+
+    <div class="footer">
+      本报告基于 Mysteel 农产品 36 份周度报告（2026.10.8-10.15）原文整理，仅供内部研究参考，不构成投资建议。<br>数据来源：Mysteel 农产品数据库（钢联数据终端 · 农产品板块）
+    </div>
+
+  </div>
+</body>
+</html>
